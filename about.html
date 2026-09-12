@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Janeeva | Designing Better Spaces</title>
+
+<style>
+:root {
+    --dark: #0d211d;
+    --dark-2: #071914;
+    --deep: #091b17;
+    --card: #122b25;
+    --olive: #aeb663;
+    --olive-dark: #718d21;
+    --cream: #edf1f1;
+    --text-soft: #c5cbc8;
+    --line: rgba(255,255,255,.10);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--dark);
+    color: #fff;
+    overflow-x: hidden;
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    width: 100%;
+    height: 85px;
+    background: #f5ffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 15px rgba(0,0,0,.08);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-mark {
+    width: 125px; height: auto; position: relative;
+}
+.logo-mark img { width: 125px; height: auto; display: block; }
+
+.logo-mark::before,
+.logo-mark::after {
+    content: "";
+    position: absolute;
+    border-radius: 18px 18px 4px 18px;
+}
+
+/* .logo-mark::before {
+    width: 15px;
+    height: 35px;
+    background: #789b2a;
+    right: 4px;
+    top: 0;
+    transform: rotate(25deg);
+}
+
+.logo-mark::after {
+    width: 15px;
+    height: 29px;
+    background: #a26d31;
+    left: 5px;
+    bottom: 0;
+    transform: rotate(-35deg);
+} */
+
+.logo-text h1 {
+    color: #283237;
+    font-family: Georgia, serif;
+    font-size: 25px;
+    letter-spacing: .5px;
+}
+
+.logo-text span {
+    display: block;
+    margin-top: -2px;
+    font-size: 7px;
+    color: #777;
+    letter-spacing: 1.3px;
+}
+
+@keyframes logoFloat {
+    0%,100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-4px) rotate(3deg); }
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+    list-style: none;
+}
+
+nav a {
+    color: #30363a;
+    font-size: 17px;
+    transition: color .3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--olive-dark);
+}
+
+.hamburger {
+    display: none;
+    width: 42px;
+    height: 42px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 28px;
+    height: 2px;
+    background: #273134;
+    margin: 6px auto;
+    transition: .3s;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ================= ABOUT HERO ================= */
+
+.about-hero {
+    min-height: 450px;
+    margin-top: 85px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background:url(./images/about-banner.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.about-hero::after {
+    content: "";
+    position: absolute;
+    width: 390px;
+    height: 390px;
+    border: 1px solid rgba(255,255,255,.38);
+    transform: rotate(45deg);
+    right: -195px;
+    bottom: -210px;
+}
+
+.about-hero-content {
+    width: min(1180px, 84%);
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    padding: 90px 0;
+}
+
+.eyebrow {
+    color: var(--olive);
+    font-size: 10px;
+    letter-spacing: 6px;
+    font-weight: 700;
+}
+
+.about-hero h2 {
+    max-width: 720px;
+    margin-top: 22px;
+    font-family: Georgia, serif;
+    font-size: clamp(48px, 6vw, 78px);
+    line-height: 1.03;
+    font-weight: 500;
+}
+
+.about-hero p {
+    max-width: 600px;
+    margin-top: 25px;
+    color: #e0e5e2;
+    line-height: 1.9;
+    font-size: 15px;
+}
+
+.hero-line {
+    width: 78px;
+    height: 2px;
+    background: var(--olive);
+    margin-top: 30px;
+}
+
+/* ================= INTRO ================= */
+
+.about-intro {
+    padding: 110px 8%;
+    background: var(--dark);
+}
+
+.intro-grid {
+    width: min(1180px, 100%);
+    margin: auto;
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 90px;
+    align-items: center;
+}
+
+.image-stack {
+    position: relative;
+    min-height: 470px;
+}
+
+.main-photo {
+    height: 450px;
+    border-radius: 3px;
+    overflow: hidden;
+    background: url(./images/about-boximg.jpg);
+     background-size: cover;
+    background-position: center;
+}
+
+.photo-badge {
+    position: absolute;
+    right: -25px;
+    bottom: 0;
+    width: 185px;
+    min-height: 155px;
+    padding: 28px;
+    background: var(--olive-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.photo-badge strong {
+    font-family: Georgia, serif;
+    font-size: 48px;
+    font-weight: normal;
+}
+
+.photo-badge span {
+    margin-top: 5px;
+    font-size: 10px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.intro-content h3 {
+    margin-top: 18px;
+    font-family: Georgia, serif;
+    font-size: clamp(34px, 4vw, 52px);
+    line-height: 1.12;
+    font-weight: normal;
+}
+
+.intro-content h3 span {
+    color: var(--olive);
+}
+
+.intro-content p {
+    margin-top: 22px;
+    color: var(--text-soft);
+    font-size: 14px;
+    line-height: 2;
+}
+
+.signature {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    color: var(--olive);
+    font-family: Georgia, serif;
+    font-size: 22px;
+}
+
+/* ================= VISION / MISSION ================= */
+
+.purpose {
+    padding: 110px 8%;
+    background: #0a1c18;
+}
+
+.section-title {
+    width: min(1180px, 100%);
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.section-title h3 {
+    margin-top: 18px;
+    font-family: Georgia, serif;
+    font-size: clamp(34px, 4vw, 48px);
+    font-weight: normal;
+}
+
+.section-title p {
+    max-width: 650px;
+    margin: 18px auto 0;
+    color: var(--text-soft);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.purpose-grid {
+    width: min(1180px, 100%);
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 26px;
+}
+
+.purpose-card {
+    min-height: 360px;
+    padding: 50px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, rgba(28,55,48,.95), rgba(13,33,29,.98));
+    border: 1px solid rgba(255,255,255,.08);
+    transition: transform .4s ease, border-color .4s ease;
+}
+
+.purpose-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(174,182,99,.55);
+}
+
+.card-number {
+    color: rgba(174,182,99,.32);
+    font-family: Georgia, serif;
+    font-size: 82px;
+    line-height: 1;
+}
+
+.purpose-card h4 {
+    margin-top: 22px;
+    font-family: Georgia, serif;
+    font-size: 34px;
+    font-weight: normal;
+}
+
+.purpose-card p {
+    margin-top: 20px;
+    color: var(--text-soft);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.purpose-card::after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border: 1px solid rgba(174,182,99,.25);
+    right: -60px;
+    bottom: -60px;
+    transform: rotate(45deg);
+}
+
+/* ================= VALUES ================= */
+
+.values {
+    padding: 105px 8%;
+    background: var(--dark);
+}
+
+.values-wrap {
+    width: min(1180px, 100%);
+    margin: auto;
+}
+
+.values-grid {
+    margin-top: 55px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+}
+
+.value {
+    min-height: 220px;
+    padding: 35px 28px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.value small {
+    color: var(--olive);
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.value h4 {
+    margin-top: 20px;
+    font-family: Georgia, serif;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.value p {
+    margin-top: 14px;
+    color: #aeb7b3;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* ================= CTA ================= */
+
+.about-cta {
+    padding: 90px 8%;
+    background: linear-gradient(90deg, #102b24, #071914);
+}
+
+.cta-wrap {
+    width: min(1180px, 100%);
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.cta-wrap h3 {
+    margin-top: 16px;
+    font-family: Georgia, serif;
+    font-size: clamp(34px, 4vw, 52px);
+    font-weight: normal;
+}
+
+.cta-wrap h3 span {
+    color: var(--olive);
+}
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 22px;
+    white-space: nowrap;
+    padding: 16px 22px;
+    background: var(--olive-dark);
+    font-size: 11px;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    transition: .3s;
+}
+
+.cta-btn:hover {
+    background: #536b13;
+    transform: translateY(-4px);
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    padding: 25px 8%;
+    background: #071713;
+    color: #89918d;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 13px;
+}
+
+/* ================= REVEAL ================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* ================= dropdown ================= */
+
+/* ================= COMPANY DROPDOWN ================= */
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.arrow {
+    font-size: 17px;
+    transition: transform .3s ease;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 35px;
+    left: -20px;
+
+    width: 210px;
+
+    display: block;
+
+    padding: 10px 0;
+
+    background: #ffffff;
+
+    border-radius: 4px;
+
+    box-shadow: 0 12px 30px rgba(0,0,0,.15);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(12px);
+
+    transition:
+        opacity .3s ease,
+        transform .3s ease,
+        visibility .3s ease;
+
+    z-index: 1001;
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu a {
+    display: block;
+
+    padding: 12px 20px;
+
+    font-size: 14px;
+
+    color: #30363a;
+
+    transition:
+    background .3s ease,
+    color .3s ease,
+    padding-left .3s ease;
+}
+
+.dropdown-menu a:hover {
+    background: #f1f3ef;
+
+    color: var(--olive-dark);
+
+    padding-left: 27px;
+}
+
+/* Desktop hover */
+
+@media (min-width: 901px) {
+
+    .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .dropdown:hover .arrow {
+        transform: rotate(180deg);
+    }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+    header {
+        height: 75px;
+        padding: 0 16px;
+    }
+
+    .logo-mark img {
+    width: 125px;
+    height: auto;
+    display: block;
+}
+    .hamburger {
+        display: block;
+        position: relative;
+        z-index: 1002;
+    }
+
+    nav {
+        position: fixed;
+        top: 75px;
+        right: -100%;
+        width: min(330px, 88vw);
+        height: calc(100vh - 75px);
+        padding: 45px 30px;
+        background: #f7fcfa;
+        transition: right .4s ease;
+        box-shadow: -10px 0 30px rgba(0,0,0,.15);
+        overflow-y: auto;
+    }
+
+    nav.active {
+        right: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 28px;
+    }
+
+    nav a {
+        font-size: 18px;
+    }
+
+.logo-mark { width: 105px; }
+
+
+/* MOBILE COMPANY DROPDOWN */
+
+.dropdown-menu {
+    position: static;
+
+    width: 100%;
+
+    display: none;
+
+    opacity: 1;
+    visibility: visible;
+
+    transform: none;
+
+    background: transparent;
+
+    box-shadow: none;
+
+    padding: 12px 0 0 18px;
+
+    /* border-left: 1px solid rgba(0,0,0,.15); */
+
+    margin-top: 10px;
+}
+
+.dropdown-menu a {
+    padding: 10px 12px;
+
+    font-size: 15px;
+}
+
+.dropdown-menu a:hover {
+    background: transparent;
+
+    padding-left: 16px;
+}
+
+.dropdown.active .dropdown-menu {
+    display: block;
+}
+
+.dropdown.active .arrow {
+    transform: rotate(180deg);
+}
+
+    .about-hero {
+        margin-top: 75px;
+        min-height: 590px;
+        background-position: 58% center;
+    }
+
+    .about-hero-content {
+        width: min(100% - 50px, 680px);
+    }
+
+    .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .image-stack {
+        max-width: 650px;
+        width: calc(100% - 25px);
+    }
+
+    .purpose-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+    .logo-text h1 {
+        font-size: 21px;
+    }
+
+
+    .logo-mark { width: 105px; }
+    .about-hero {
+        min-height: 560px;
+        background-position: 62% center;
+    }
+
+    .about-hero h2 {
+        font-size: 44px;
+    }
+
+    .about-hero p {
+        font-size: 13px;
+    }
+
+    .about-intro,
+    .purpose,
+    .values,
+    .about-cta {
+        padding: 75px 25px;
+    }
+
+    .main-photo {
+        height: 350px;
+    }
+
+    .photo-badge {
+        right: -20px;
+        width: 150px;
+        min-height: 125px;
+        padding: 20px;
+    }
+
+    .photo-badge strong {
+        font-size: 38px;
+    }
+
+    .purpose-card {
+        min-height: auto;
+        padding: 35px 28px;
+    }
+
+    .purpose-card h4 {
+        font-size: 30px;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+   
+     <a href="index.html" class="logo">
+    <div class="logo-mark">
+        <img src="./images/logo-new.jpg" alt="Janeeva Logo">
+    </div>
+</a>
+
+    <nav id="navbar">
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a class="active" href="./about.html">About</a></li>
+           <li class="dropdown" id="companyDropdown">
+    <a href="#" class="dropdown-toggle" id="companyBtn">
+        Companies <span class="arrow">▾</span>
+    </a>
+
+    <ul class="dropdown-menu">
+        <li><a href="janeeva-interiors.html">Janeeva Interiors</a></li>
+        <li><a href="janeeva-projects.html">Janeeva Projects</a></li>
+        <li><a href="janeeva-ventures.html">Janeeva Ventures</a></li>
+       
+    </ul>
+</li>
+            <li><a href="./gallery.html">Gallery</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="Open navigation">
+        <span></span><span></span><span></span>
+    </button>
+</header>
+
+<main id="about">
+
+    <section class="about-hero">
+        <div class="about-hero-content reveal">
+            <div class="eyebrow">ABOUT JANEEVA</div>
+            <h2>Designing Spaces That <span style="color:var(--olive)">Inspire Life.</span></h2>
+            <p>
+                Janeeva is built on the belief that thoughtful spaces can transform
+                everyday experiences. We bring together design, purpose and craftsmanship
+                to create environments with lasting meaning.
+            </p>
+            <div class="hero-line"></div>
+        </div>
+    </section>
+
+    <section class="about-intro">
+        <div class="intro-grid">
+            <div class="image-stack reveal">
+                <div class="main-photo"></div>
+                <div class="photo-badge">
+                    <strong>10+</strong>
+                    <span>Years of thoughtful design</span>
+                </div>
+            </div>
+
+            <div class="intro-content reveal">
+                <div class="eyebrow">OUR STORY</div>
+                <h3>Creating Spaces With <span>Purpose.</span></h3>
+                <p>
+                    Janeeva represents a vision of thoughtful design, quality craftsmanship
+                    and sustainable development. Every project begins with understanding how
+                    people live, work and connect with the spaces around them.
+                </p>
+                <p>
+                    From modern architecture to carefully designed interiors, we focus on
+                    balancing beauty, functionality and long-term value—creating environments
+                    that feel meaningful today and remain relevant tomorrow.
+                </p>
+                <div class="signature">Designed for better living.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="purpose">
+        <div class="section-title reveal">
+            <div class="eyebrow">WHAT GUIDES US</div>
+            <h3>Our Purpose, <span style="color:var(--olive)">Clearly Defined.</span></h3>
+            <p>
+                Our vision gives us direction. Our mission guides the way we turn ideas
+                into meaningful spaces and experiences.
+            </p>
+        </div>
+
+        <div class="purpose-grid">
+            <article class="purpose-card reveal">
+                <div class="card-number">01</div>
+                <h4>Our Vision</h4>
+                <p>
+                    To shape a future where every space is designed with intention—bringing
+                    together beauty, innovation and sustainability to inspire better ways of
+                    living and working.
+                </p>
+            </article>
+
+            <article class="purpose-card reveal">
+                <div class="card-number">02</div>
+                <h4>Our Mission</h4>
+                <p>
+                    To create thoughtful, functional and timeless environments through
+                    meaningful collaboration, quality craftsmanship and a deep commitment
+                    to the people who experience our spaces.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <section class="values">
+        <div class="values-wrap">
+            <div class="section-title reveal">
+                <div class="eyebrow">THE JANEEVA WAY</div>
+                <h3>What We Bring To Every Project.</h3>
+            </div>
+
+            <div class="values-grid">
+                <div class="value reveal">
+                    <small>01 / DESIGN</small>
+                    <h4>Thoughtful</h4>
+                    <p>Every decision begins with purpose, context and the people who will use the space.</p>
+                </div>
+                <div class="value reveal">
+                    <small>02 / QUALITY</small>
+                    <h4>Crafted</h4>
+                    <p>We value detail, materiality and workmanship that stands the test of time.</p>
+                </div>
+                <div class="value reveal">
+                    <small>03 / PEOPLE</small>
+                    <h4>Human</h4>
+                    <p>Our spaces are designed around real experiences, needs and everyday life.</p>
+                </div>
+                <div class="value reveal">
+                    <small>04 / FUTURE</small>
+                    <h4>Responsible</h4>
+                    <p>We aim for lasting value through considered and sustainable design choices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-cta" id="contact">
+        <div class="cta-wrap reveal">
+            <div>
+                <div class="eyebrow">LET'S CREATE TOGETHER</div>
+                <h3>Have A Space In Mind?<br><span>Let's Make It Meaningful.</span></h3>
+            </div>
+            <a href="mailto:info@janeeva.com" class="cta-btn">
+                Start a conversation <span>→</span>
+            </a>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div>© 2026 Janeeva. All Rights Reserved.</div>
+    <div>Designing Better Spaces.</div>
+</footer>
+
+<script>
+const hamburger = document.getElementById("hamburger");
+const navbar = document.getElementById("navbar");
+const companyBtn = document.getElementById("companyBtn");
+const companyDropdown = document.getElementById("companyDropdown");
+
+/* Mobile hamburger */
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navbar.classList.toggle("active");
+    document.body.classList.toggle("menu-open");
+});
+
+
+/* Company dropdown */
+companyBtn.addEventListener("click", function (e) {
+
+    // Only use click dropdown on mobile
+    if (window.innerWidth <= 900) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        companyDropdown.classList.toggle("active");
+    }
+
+});
+
+
+/* Close mobile menu when clicking normal links */
+document.querySelectorAll("nav > ul > li > a:not(.dropdown-toggle)").forEach(link => {
+    link.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navbar.classList.remove("active");
+        document.body.classList.remove("menu-open");
+    });
+});
+
+
+/* Close menu when clicking dropdown submenu links */
+document.querySelectorAll(".dropdown-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navbar.classList.remove("active");
+        document.body.classList.remove("menu-open");
+        companyDropdown.classList.remove("active");
+    });
+});
+
+
+/* Scroll reveal animation */
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.14
+});
+
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+
+/* Reset mobile menu when resizing to desktop */
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 900) {
+        hamburger.classList.remove("active");
+        navbar.classList.remove("active");
+        document.body.classList.remove("menu-open");
+        companyDropdown.classList.remove("active");
+    }
+});
+</script>
+
+</body>
+</html>

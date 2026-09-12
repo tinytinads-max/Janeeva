@@ -1,0 +1,1777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Janeeva | Interior Design</title>
+
+<style>
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0c211d;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    width: 100%;
+    height: 85px;
+    background: #f5ffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    box-shadow: 0 3px 15px rgba(0,0,0,.08);
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-icon {
+    /* width: 100%;
+    /* height: 44px; 
+    position: relative;
+    animation: logoFloat 3s ease-in-out infinite; */
+      width: 210px;
+    position: relative;
+    animation: logoFloat 3s ease-in-out infinite;
+}
+
+/* .logo-icon::before {
+    content: "";
+    position: absolute;
+    width: 13px;
+    height: 30px;
+    background: #6d8f25;
+    border-radius: 20px 20px 0 20px;
+    right: 2px;
+    top: 0;
+    transform: rotate(20deg);
+}
+
+.logo-icon::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 25px;
+    background: #9b6b2e;
+    border-radius: 0 20px 20px 20px;
+    left: 2px;
+    bottom: 2px;
+    transform: rotate(40deg);
+} */
+
+.logo-text h2 {
+    color: #283237;
+    font-family: Georgia, serif;
+    font-size: 26px;
+    letter-spacing: 1px;
+}
+
+.logo-text span {
+    font-size: 8px;
+    color: #777;
+    letter-spacing: 1px;
+}
+
+@keyframes logoFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-5px) rotate(3deg);
+    }
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: #30363a;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    transition: .3s;
+}
+
+/* Hover */
+nav ul li a:hover {
+    color: #738c29;
+}
+
+/* Active menu */
+nav ul li a.active {
+    color: #738c29;
+}
+
+/* =========================
+   DROPDOWN
+========================= */
+
+.dropdown-menu {
+    position: absolute;
+    top: 35px;
+    left: -20px;
+    width: 190px;
+    background: white;
+    padding: 12px 0;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+
+    transition: .3s;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 20px;
+    font-size: 15px;
+}
+
+.dropdown-menu a:hover {
+    background: #f1f3ef;
+    padding-left: 25px;
+}
+
+
+/* =========================
+   HAMBURGER
+========================= */
+
+.hamburger {
+    display: none;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 27px;
+    height: 2px;
+    background: #273134;
+    display: block;
+    margin: 6px auto;
+    transition: .3s;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    margin-top: 85px;
+    width: 100%;
+    height: 767px;
+    position: relative;
+    overflow: hidden;
+    background: #111;
+}
+
+.slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+
+    opacity: 0;
+    transform: scale(1.08);
+
+    transition:
+        opacity 1.2s ease,
+        transform 7s ease;
+
+    background-size: cover;
+    background-position: center;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* YOUR BANNER IMAGES */
+
+.slide:nth-child(1) {
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.28),
+            rgba(0,0,0,.08)
+        ),
+        url("images/hero-1.jpg");
+}
+
+.slide:nth-child(2) {
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.35),
+            rgba(0,0,0,.1)
+        ),
+        url("images/hero-2.jpg");
+}
+
+.slide:nth-child(3) {
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.35),
+            rgba(0,0,0,.1)
+        ),
+        url("images/hero-3.jpg");
+}
+
+
+/* HERO CONTENT */
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-20%, -50%);
+    z-index: 10;
+
+    max-width: 650px;
+}
+
+.hero-content h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(38px, 4vw, 54px);
+    line-height: 1.05;
+    font-weight: 600;
+
+    opacity: 0;
+    transform: translateY(40px);
+
+    animation: heroText 1s forwards .5s;
+}
+
+.hero-content p {
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+
+    animation: heroText 1s forwards .8s;
+}
+
+@keyframes heroText {
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* HERO DECORATION */
+
+.hero-shape {
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    border: 2px solid rgba(255,255,255,.85);
+
+    transform: rotate(45deg);
+
+    left: -155px;
+    top: -13px;
+
+    z-index: -1;
+}
+
+
+/* BUTTON */
+
+.primary-btn {
+    margin-top: 28px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 25px;
+
+    background: #718d21;
+    color: white;
+
+    padding: 15px 20px;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+
+    transition: .4s;
+
+    opacity: 0;
+
+    animation: fadeButton 1s forwards 1.1s;
+}
+
+.primary-btn:hover {
+    background: #526b12;
+    transform: translateY(-4px);
+}
+
+@keyframes fadeButton {
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================
+   PARTNERS
+========================= */
+
+.partners {
+    background: #e7e8eb;
+    min-height: 100px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    align-items: stretch;
+    padding: 0 10%;
+}
+
+.partner {
+    position: relative;
+
+    color: #6b6d70;
+
+    min-height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-right: 1px solid #ccc;
+
+    text-decoration: none;
+
+    overflow: hidden;
+
+    transition:
+        background 0.4s ease,
+        color 0.4s ease,
+        transform 0.4s ease;
+}
+
+.partner:last-child {
+    border-right: none;
+}
+.partner-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    position: relative;
+    z-index: 2;
+
+    transition: transform 0.4s ease;
+}
+
+.partner h3 {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-weight: normal;
+
+    transition: color 0.4s ease;
+}
+
+.partner span {
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+/* =========================
+   HOVER BACKGROUND EFFECT
+========================= */
+
+.partner::before {
+    content: "";
+
+    position: absolute;
+
+    width: 0;
+    height: 100%;
+
+    left: 0;
+    top: 0;
+
+    background: #718d21;
+
+    transition: width 0.5s ease;
+
+    z-index: 1;
+}
+
+
+/* Hover */
+
+.partner:hover::before {
+    width: 100%;
+}
+
+.partner:hover {
+    color: #ffffff;
+}
+
+.partner:hover .partner-content {
+    transform: translateY(-4px);
+}
+
+.partner:hover h3 {
+    color: #ffffff;
+}
+
+
+/* Arrow */
+
+.partner::after {
+    content: "→";
+
+    position: absolute;
+
+    right: 25px;
+
+    opacity: 0;
+
+    transform: translateX(-10px);
+
+    transition: 0.4s ease;
+
+    z-index: 2;
+
+    color: white;
+
+    font-size: 20px;
+}
+
+.partner:hover::after {
+    opacity: 1;
+
+    transform: translateX(0);
+}
+
+
+/* =========================
+   TDR CIRCLE
+========================= */
+
+.tdr-logo {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #777;
+
+    color: white;
+
+    font-size: 15px;
+
+    transition: 0.4s ease;
+}
+
+.partner:hover .tdr-logo {
+    background: white;
+    color: #718d21;
+
+    transform: rotate(360deg);
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    padding: 90px 8%;
+    background: #0d211d;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-heading small {
+    color: #a6ad6e;
+    letter-spacing: 5px;
+    font-size: 10px;
+}
+
+.section-heading h2 {
+    margin-top: 15px;
+    font-family: Georgia, serif;
+    font-size: 34px;
+    font-weight: normal;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 35px;
+    align-items: center;
+}
+
+.about-image {
+    height: 330px;
+
+    background-image:url(./images/about.jpg);
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 6px;
+
+    transform: translateX(-60px);
+    opacity: 0;
+
+    transition: 1s;
+}
+
+.about-image.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.about-content {
+    padding: 20px;
+}
+
+.about-content h2 {
+    font-family: Georgia, serif;
+    font-size: 34px;
+    line-height: 1.2;
+}
+
+.about-content h2 span {
+    color: #a6ad5f;
+}
+
+.about-content p {
+    color: #c1c8c4;
+    font-size: 13px;
+    line-height: 2;
+    margin-top: 20px;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+    margin-top: 35px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.stat {
+    border-left: 2px solid #718d39;
+    padding-left: 12px;
+}
+
+.stat h3 {
+    color: #b1bd67;
+    font-size: 22px;
+}
+
+.stat p {
+    margin-top: 3px;
+    font-size: 10px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    padding: 90px 12%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0d261f,
+            #071914
+        );
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.contact-info small {
+    color: #a99965;
+    letter-spacing: 6px;
+    font-size: 10px;
+}
+
+.contact-info h2 {
+    font-family: Georgia, serif;
+    font-size: 42px;
+
+    margin: 25px 0;
+    line-height: 1.2;
+}
+
+.contact-info h2 span {
+    color: #aeb663;
+}
+
+.contact-info p {
+    color: #c5cbc8;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.contact-details {
+    margin-top: 25px;
+}
+
+.contact-details div {
+    margin-bottom: 18px;
+}
+
+.contact-details strong {
+    display: block;
+    color: #aeb663;
+    margin-bottom: 5px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.contact-form input,
+.contact-form textarea {
+
+    width: 100%;
+
+    background: rgba(255,255,255,.05);
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    padding: 16px;
+
+    color: white;
+
+    margin-bottom: 15px;
+
+    outline: none;
+
+    transition: .3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #849b3b;
+    background: rgba(255,255,255,.08);
+}
+
+.contact-form textarea {
+    height: 130px;
+    resize: none;
+}
+
+.send-btn {
+    border: none;
+    cursor: pointer;
+
+    background: #748d25;
+    color: white;
+
+    padding: 15px 22px;
+
+    border-radius: 25px;
+
+    transition: .3s;
+}
+
+.send-btn:hover {
+    transform: translateY(-3px);
+    background: #5d7418;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    background: #071713;
+
+    padding: 25px 8%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #89918d;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   SCROLL ANIMATION
+========================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: 1s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 850px) {
+
+    header {
+        height: 75px;
+        padding: 0 20px;
+    }
+
+    .hero {
+        margin-top: 75px;
+        height: 650px;
+    }
+
+    .hamburger {
+        display: block;
+        z-index: 1001;
+    }
+
+    nav {
+        position: fixed;
+
+        top: 75px;
+        right: -100%;
+
+        width: 280px;
+        height: calc(100vh - 75px);
+
+        background: #f7fcfa;
+
+        padding: 40px 30px;
+
+        transition: .4s;
+
+        box-shadow: -10px 0 30px rgba(0,0,0,.1);
+    }
+
+    nav.active {
+        right: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 28px;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+    }
+   nav ul li a.active {
+        color: #738c29;
+       
+    }
+
+    /* MOBILE DROPDOWN */
+
+    .dropdown-menu {
+        position: static;
+
+        width: 100%;
+
+        box-shadow: none;
+
+        background: transparent;
+
+        padding: 10px 0 0 20px;
+
+        display: none;
+
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+
+
+    .hero-content {
+        left: 25px;
+        right: 25px;
+
+        transform: translateY(-50%);
+    }
+
+    .hero-content h1 {
+        font-size: 42px;
+    }
+
+    .hero-shape {
+        width: 170px;
+        height: 170px;
+
+        left: -80px;
+    }
+
+
+     .partners {
+        grid-template-columns: 1fr;
+        padding: 0;
+    }
+
+
+     .partner {
+        min-height: 90px;
+
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .partner:last-child {
+        border-bottom: none;
+    }
+
+
+
+    .about {
+        padding: 70px 25px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image {
+        height: 260px;
+    }
+
+    .about-content {
+        padding: 15px 0;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+
+    .contact {
+        padding: 70px 25px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .contact-info h2 {
+        font-size: 34px;
+    }
+
+
+    footer {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+}
+
+
+/* SMALL MOBILE */
+
+@media (max-width: 480px) {
+
+    .logo-text h2 {
+        font-size: 22px;
+    }
+
+    .hero {
+        height: 580px;
+    }
+
+    .hero-content h1 {
+        font-size: 35px;
+    }
+
+    .primary-btn {
+        padding: 13px 16px;
+    }
+
+    .section-heading h2 {
+        font-size: 28px;
+    }
+
+    .about-content h2 {
+        font-size: 28px;
+    }
+
+}
+
+
+/* =========================
+   ABOUT VIDEO FIX
+========================= */
+
+.about-image {
+    overflow: hidden;
+}
+
+.about-video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    background: #071914;
+}
+
+@media (max-width: 850px) {
+    .about-video {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* =========================
+   RESPONSIVE FIXES
+========================= */
+
+.logo-icon img {
+  display: block;
+    width: 100%;
+    height: auto;
+    max-height: 85px;
+    object-fit: contain;
+}
+
+.contact-info > span img {
+    width: 120px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 850px) {
+    body.menu-open { overflow: hidden; }
+
+    nav {
+        max-width: 85vw;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .hero-content {
+        left: 8%;
+        right: 8%;
+        max-width: 620px;
+        transform: translateY(-50%);
+    }
+
+    .hero-content h1 {
+        font-size: clamp(34px, 7vw, 46px);
+    }
+
+    .slide {
+        background-position: center center;
+    }
+
+    .dropdown-menu a {
+        padding: 10px 0;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        height: 75px;
+        padding: 0 16px;
+    }
+
+    .logo-icon {
+        width: 150px;
+        max-width: calc(100vw - 90px);
+    }
+
+    .logo-icon img {
+        max-height: 45px;
+    }
+
+    nav {
+        top: 70px;
+        width: min(320px, 88vw);
+        max-width: 88vw;
+        height: calc(100vh - 70px);
+        padding: 28px 22px 40px;
+    }
+
+    nav ul {
+        gap: 20px;
+    }
+
+    .hero {
+        margin-top: 70px;
+        height: min(78vh, 620px);
+        min-height: 500px;
+    }
+
+    .hero-content {
+        left: 24px;
+        right: 24px;
+        top: 50%;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(31px, 9vw, 40px);
+        line-height: 1.1;
+    }
+
+    .hero-content h1 br {
+        display: none;
+    }
+
+    .primary-btn {
+        margin-top: 22px;
+        gap: 14px;
+        padding: 13px 16px;
+    }
+
+    .hero-shape {
+        width: 140px;
+        height: 140px;
+        left: -75px;
+        top: -5px;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .section-heading small {
+        letter-spacing: 3px;
+    }
+
+    .about {
+        padding: 60px 20px;
+    }
+
+    .about-grid {
+        gap: 25px;
+    }
+
+    .about-image {
+        width: 100%;
+        height: 240px;
+        transform: translateX(-25px);
+    }
+
+    .about-content {
+        padding: 0;
+    }
+
+    .about-content p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .stat {
+        padding-left: 8px;
+    }
+
+    .stat h3 {
+        font-size: 19px;
+    }
+
+    .stat p {
+        font-size: 9px;
+        line-height: 1.4;
+    }
+
+    .contact {
+        padding: 60px 20px;
+    }
+
+    .contact-grid {
+        gap: 35px;
+    }
+
+    .contact-info h2 {
+        font-size: clamp(30px, 9vw, 38px);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 14px;
+    }
+
+    footer {
+        padding: 22px 20px;
+    }
+}
+
+@media (max-width: 380px) {
+    .logo-icon {
+        width: 125px;
+    }
+
+    .hero {
+        min-height: 460px;
+    }
+
+    .hero-content {
+        left: 18px;
+        right: 18px;
+    }
+
+    .hero-content h1 {
+        font-size: 29px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .stat p {
+        font-size: 10px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <a href="#" class="logo">
+
+        <div class="logo-icon"><img src="./images/logo-new.jpg"></div>
+
+        <!-- <div class="logo-text">
+            <h2>Janeeva</h2>
+            <span>TO THE NEXT LEVEL</span>
+        </div> -->
+
+    </a>
+
+
+    <nav id="navbar">
+
+        <ul>
+
+            <li>
+                <a href="./index.html" class="active">Home</a>
+            </li>
+
+            <li>
+                <a href="./about.html">About</a>
+            </li>
+
+
+            <!-- COMPANY DROPDOWN -->
+
+            <li class="dropdown" id="companyDropdown">
+
+                <a href="#" id="companyBtn">
+                    Companies ▾
+                </a>
+
+                <div class="dropdown-menu">
+
+                    <a href="#">Janeeva Interiors</a>
+
+                    <a href="#">Janeeva Projects</a>
+
+                    <a href="#">Janeeva Ventures</a>
+
+                   
+                </div>
+
+            </li>
+
+
+            <li>
+                <a href="./gallery.html">Gallery</a>
+            </li>
+
+            <li>
+                <a href="./contact.html">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- HAMBURGER -->
+
+    <button class="hamburger" id="hamburger">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="slider">
+
+        <div class="slide active"></div>
+
+        <div class="slide"></div>
+
+        <div class="slide"></div>
+
+    </div>
+
+
+    <div class="hero-content">
+
+        <!-- <div class="hero-shape"></div> -->
+
+        <h1>
+            Designing Spaces Meaning<br>
+            Essentially Inspire Life
+        </h1>
+
+        <a href="./gallery.html" class="primary-btn">
+
+            Our Projects
+
+            <span>→</span>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PARTNERS ================= -->
+
+<section class="partners">
+
+    <a href="https://example.com/liquid" class="partner" target="_blank">
+        <div class="partner-content">
+            <h3>✤ LIQUID</h3>
+            <span>VENTURE PARTNERS LLC</span>
+        </div>
+    </a>
+
+    <a href="https://example.com/fp-partners" class="partner" target="_blank">
+        <div class="partner-content">
+            <h3>FP</h3>
+            <span>FRANCISCO PARTNERS</span>
+        </div>
+    </a>
+
+    <a href="https://example.com/tdr-capital" class="partner" target="_blank">
+        <div class="partner-content">
+            <div class="tdr-logo">TDR</div>
+            <h3>Capital</h3>
+        </div>
+    </a>
+
+</section>
+
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+    <div class="section-heading reveal">
+
+        <small>ABOUT JANEEVA</small>
+
+        <h2>Creating Spaces With Purpose</h2>
+
+    </div>
+
+
+    <div class="about-grid">
+
+        <div class="about-image">
+            <video
+                class="about-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="auto"
+                controls
+                poster="./images/about.jpg"
+                aria-label="Janeeva design video">
+                <source src="./images/video.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+        </div>
+
+
+        <div class="about-content reveal">
+
+            <h2>
+                Designed For
+                <span>Better Living.</span>
+            </h2>
+
+
+            <p>
+                Janeeva represents a vision of thoughtful design,
+                quality craftsmanship and sustainable development.
+                We believe every space should inspire the people
+                who experience it.
+            </p>
+
+
+            <p>
+                From modern architecture to carefully designed interiors,
+                we focus on creating environments that combine beauty,
+                functionality and long-term value.
+            </p>
+
+
+            <div class="stats">
+
+                <div class="stat">
+
+                    <h3>10+</h3>
+
+                    <p>Years Experience</p>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <h3>50+</h3>
+
+                    <p>Projects Completed</p>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <h3>100%</h3>
+
+                    <p>Customer Focus</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+    <div class="contact-grid">
+
+        <div class="contact-info reveal">
+<span><img src="./images/logo-new.jpg"></span>
+            <small>GET IN TOUCH</small>
+
+            <h2>
+                Let's Build Something
+                <span>Beautiful.</span>
+            </h2>
+
+
+            <p>
+                Have a project in mind? We'd love to hear about it.
+                Connect with Janeeva and let's create something
+                exceptional together.
+            </p>
+
+
+            <div class="contact-details">
+
+                <div>
+
+                    <strong>Email</strong>
+
+                    <span>info@janeeva.com</span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>Phone</strong>
+
+                    <span>+91 00000 00000</span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>Location</strong>
+
+                    <span>India</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CONTACT FORM -->
+
+        <form class="contact-form reveal">
+
+            <input
+                type="text"
+                placeholder="Your Name"
+                required
+            >
+
+
+            <input
+                type="email"
+                placeholder="Your Email"
+                required
+            >
+
+
+            <input
+                type="tel"
+                placeholder="Your Phone"
+            >
+
+
+            <textarea
+                placeholder="Tell us about your project"
+            ></textarea>
+
+
+            <button class="send-btn" type="submit">
+
+                Send Message &nbsp; →
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div>
+        © 2026 Janeeva. All Rights Reserved.
+    </div>
+
+    <div>
+        Designing Better Spaces.
+    </div>
+
+</footer>
+
+
+
+<script>
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+const hamburger = document.getElementById("hamburger");
+const navbar = document.getElementById("navbar");
+
+hamburger.addEventListener("click", () => {
+
+    hamburger.classList.toggle("active");
+    navbar.classList.toggle("active");
+    document.body.classList.toggle("menu-open", navbar.classList.contains("active"));
+
+});
+
+
+/* =========================
+   MOBILE DROPDOWN
+========================= */
+
+const companyBtn = document.getElementById("companyBtn");
+const companyDropdown = document.getElementById("companyDropdown");
+
+companyBtn.addEventListener("click", function(e) {
+
+    if (window.innerWidth <= 850) {
+
+        e.preventDefault();
+
+        companyDropdown.classList.toggle("active");
+
+    }
+
+});
+
+
+/* =========================
+   HERO IMAGE SLIDER
+========================= */
+
+const slides = document.querySelectorAll(".slide");
+
+let currentSlide = 0;
+
+function changeSlide() {
+
+    slides[currentSlide].classList.remove("active");
+
+    currentSlide++;
+
+    if (currentSlide >= slides.length) {
+        currentSlide = 0;
+    }
+
+    slides[currentSlide].classList.add("active");
+
+}
+
+
+/* Change image every 5 seconds */
+
+setInterval(changeSlide, 5000);
+
+
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+const revealElements =
+document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("active");
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.15
+    }
+);
+
+
+revealElements.forEach((element) => {
+
+    observer.observe(element);
+
+});
+
+
+/* ABOUT IMAGE ANIMATION */
+
+const aboutImage =
+document.querySelector(".about-image");
+
+const imageObserver =
+new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+                aboutImage.classList.add("show");
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.2
+    }
+);
+
+imageObserver.observe(aboutImage);
+
+
+
+/* =========================
+   CLOSE MOBILE MENU
+========================= */
+
+document.querySelectorAll("nav a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        if (
+            window.innerWidth <= 850 &&
+            !link.closest(".dropdown")
+        ) {
+
+            navbar.classList.remove("active");
+            hamburger.classList.remove("active");
+            document.body.classList.remove("menu-open");
+
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
